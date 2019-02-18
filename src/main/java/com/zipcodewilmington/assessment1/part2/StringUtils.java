@@ -81,10 +81,10 @@ public class StringUtils {
 
        // String newStr =  str.replace(charAt(index) , "");
 
-       // str.deleteCharAt(index);
+       //str.deleteCharAt(index,str);
 
         //return (str.(index,""));
-        return  null;
+        return null;
     }
 
 }

@@ -79,6 +79,25 @@ public class ArrayUtils {
      */
     public static Object getLeastCommon(Object[] objectArray) {
 
+        int count = 1 ,i;
+        int tempCount ,j;
+        int nonpopular = (int) objectArray[0];
+        //int temp = 0;
+        for ( i = 0; i < (objectArray.length - 1); i++) {
+            int temp = (int) objectArray[i];
+            tempCount = 0;
+            for ( j = 1; j < objectArray.length; j++) {
+                if (temp <= (int) objectArray[j]) {
+                    tempCount++;
+                }
+                if (tempCount < count) {
+                    nonpopular = temp;
+                    count = tempCount;
+                }
+            }
+
+        }
+        return nonpopular;
         /*int minCount=4;
 
         for(int i = 0; i < objectArray.length; i++)
@@ -100,7 +119,7 @@ public class ArrayUtils {
             }
         }*/
        // return minCount;
-        return  null;
+        //return  null;
     }
 
     /**
