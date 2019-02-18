@@ -15,6 +15,7 @@ public abstract class Pet implements Animal {
      * @param name name of this pet
      */
     public Pet(String name) {
+       // super(String name);
     }
 
 
