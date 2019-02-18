@@ -41,25 +41,24 @@ public class MultiplesDeleter<out> {
      */
     public Integer[] deleteOdds(Integer[] ints) {
 
-/*
-        int outLength = 0, i;
-        for (i = 0; i < ints.length; i++) {
+
+        int outLength = 0;
+        for (int i = 0; i < ints.length; i++) {
             if (ints[i] % 2 == 0) {
                 outLength++;
             }
         }
-
         Integer[] out = new Integer[outLength];
-        int counter = 0, i;
-        for (i = 0; i < ints.length; i++) {
+        int counter = 0;
+        for (int i = 0; i < ints.length; i++) {
             if (ints[i] % 2 == 0) {
                 out[counter] = ints[i];
                 counter++;
             }
         }
 
-*/
-        return null;
+
+        return out;
     }
 
     /**
@@ -68,8 +67,27 @@ public class MultiplesDeleter<out> {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        return null;
+
+
+        int outLength = 0;
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[i] % 3 == 1) {
+                outLength++;
+            }
+        }
+        Integer[] out = new Integer[outLength];
+        int counter = 0;
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[i] % 3 == 1) {
+                out[counter] = ints[i];
+                counter++;
+            }
+        }
+
+
+        return out;
     }
+
 
     /**
      * @param ints array of Integer objects
@@ -78,6 +96,24 @@ public class MultiplesDeleter<out> {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        return null;
+
+        int outLength = 0;
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[i] % multiple != 0) {
+                outLength++;
+            }
+        }
+        Integer[] out = new Integer[outLength];
+        int counter = 0;
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[i] % multiple != 0) {
+                out[counter] = ints[i];
+                counter++;
+            }
+        }
+
+
+        return out;
     }
 }
+
