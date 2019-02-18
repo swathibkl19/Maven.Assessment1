@@ -1,5 +1,5 @@
 package com.zipcodewilmington.assessment1.part1;
-import com.sun.xml.internal.ws.util.StringUtils;
+//import com.sun.xml.internal.ws.util.StringUtils;
 
 
 
@@ -13,7 +13,8 @@ public class BasicStringUtils {
      */
     public static String camelCase(String str) {
 
-        return StringUtils.capitalize(str);
+        String a =str.substring(0,1).toUpperCase() + str.substring(1);
+        return a;
 
 
     }
@@ -40,7 +41,11 @@ public class BasicStringUtils {
         String reverse = new StringBuffer (str) .reverse() .toString();
         String result = reverse;
 
-        return StringUtils.capitalize(result);
+        String a =reverse.substring(0,1).toUpperCase() + reverse.substring(1);
+
+
+
+        return a;
     }
 
 

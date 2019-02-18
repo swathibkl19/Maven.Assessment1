@@ -58,13 +58,16 @@ public class StringUtils {
      */
     public static String reverseFirstWordThenCamelCase(String sentence) {
 
-       // String[] word = sentence.split(" ");
+        String[] word = sentence.split(" ");
 
-        //String reverse = new StringBuffer (word[0]) .reverse() .toString();
+        String reverse = new StringBuffer (word[0]) .reverse() .toString();
 
         //return (reverse);
 
-        return null;
+        String a =reverse.substring(0,1).toUpperCase() + reverse.substring(1);
+
+
+        return a;
     }
 
 
