@@ -35,13 +35,13 @@ public class ArrayUtils {
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
 
-        //for (int i = 0; i < objectArray.length; i++) {
-        //  if (objectArray[i].equals(objectToRemove)) {
+       /* int remove =(int) objectArray[0];
+        for (int i = 0; i < objectArray.length-1; i++) {
+         if (objectArray[i].equals(objectToRemove)) {
 
-        //removeValue(objectArray,objectToRemove);
-        //}
+       remove =removeValue(objectArray[i],objectToRemove) ;       //}
         //array = ArrayUtils.removeElement(array, element)
-        //}
+        //}*/
         return null;
     }
 

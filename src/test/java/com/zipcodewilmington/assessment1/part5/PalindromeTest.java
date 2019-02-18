@@ -9,7 +9,7 @@ public class PalindromeTest {
     public void solution0(){
         Palindrome palindrome = new Palindrome();
         Integer expected = palindrome.countPalindromes("aaa");
-        Integer actual = 5;
+        Integer actual = 6;
         Assert.assertEquals(expected, actual);
 
     }
