@@ -45,7 +45,10 @@ public class IntegerArrayUtils {
         }
         Double average = Double.valueOf(sum/intArray.length);
 
-
+/**
+ * double sum =getSum(intArray);
+ * return getSum(sum/intArray.length);
+ */
         return average;
     }
 }

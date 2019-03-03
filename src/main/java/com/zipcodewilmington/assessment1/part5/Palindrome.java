@@ -1,33 +1,45 @@
 package com.zipcodewilmington.assessment1.part5;
 
+import com.zipcodewilmington.assessment1.part1.BasicStringUtils;
+
 public class Palindrome {
 
-    public Integer countPalindromes(String input) {
+    public Integer countPalindromes(String S) {
 
-        int globalCount = input.length();
-        for (int mid = 1; mid < input.length() - 1; mid++) {
-
-            int count = 0;
-
-            int low = mid - 1;
-            int high = mid + 1;
-            while (low >= 0 && high < input.length() && input.charAt(low--) == input.charAt(high++))
-                count= count+1;
-
-            globalCount += count;
-            count = 0;
-
-            low = mid - 1;
-            high = mid;
-            while (low >= 0 && high < input.length() && input.charAt(low--) == input.charAt(high++))
-                count++;
-
-            globalCount += count;
+        int N = S.length(), ans = 0;
+        for (int center = 0; center <= 2 * N - 1; ++center) {
+            int left = center / 2;
+            int right = left + center % 2;
+            while (left >= 0 && right < N && S.charAt(left) == S.charAt(right)) {
+                ans++;
+                left--;
+                right++;
+            }
         }
+        return ans;
 
-        return globalCount;
+
+//        int result = 0;
+//        String str = "";
+//
+//        for (int i = 0; i < input.length(); i++) {
+//            for (int j = 0; j < input.length(); j++) {
+//                str = input.substring(i, j);
+//                if (BasicStringUtils.reverse(str).equals(str)) {
+//                    result ++;
+//                }
+//            }
+//
+//            //System.out.println(input.substring(i, j));
+//
+//            //count++;
+//        }
+//         return  result;
+
+
     }
 
-    }
+
+}
 
 

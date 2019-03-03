@@ -15,6 +15,12 @@ public class BasicStringUtils {
 
         String a =str.substring(0,1).toUpperCase() + str.substring(1);
         return a;
+/**
+ * char firstChar =str.charAt(0);
+ * char upperFirstChar =Character.toUpperCase(firstChar);
+ * String taili=s
+ * return upperFirstchar +tail;
+ */
 
 
     }
@@ -28,7 +34,11 @@ public class BasicStringUtils {
         String reverse = new StringBuffer (str) .reverse() .toString();
         String reverse1 = reverse;
         return reverse1;
-
+/**for(int i =str.length()-1;i>=0;i--){
+ * result
+ }
+ *
+ */
     }
 
     /**
@@ -42,8 +52,6 @@ public class BasicStringUtils {
         String result = reverse;
 
         String a =reverse.substring(0,1).toUpperCase() + reverse.substring(1);
-
-
 
         return a;
     }

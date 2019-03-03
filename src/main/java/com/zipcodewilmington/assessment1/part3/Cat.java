@@ -14,6 +14,8 @@ public class Cat extends Pet {
         //System.out.println( "Age of the cat" + age);
 //return getName();
 //return getAge();
+        this.name= name;
+        this.age = age;
 
     }
 
@@ -22,7 +24,12 @@ public class Cat extends Pet {
      */
     public Cat(Integer age) {
 
-        System.out.println( "Age of the cat" + age);
+//        this.age = age;
+//        this.name = "Cat name";
+
+        super("Cat name",age);
+
+       // System.out.println( "Age of the cat" + age);
 
     }
 
@@ -31,7 +38,9 @@ public class Cat extends Pet {
      */
     public Cat(String name) {
 
-        System.out.println( "Name of the cat" + name);
+        this.name = name;
+
+       // System.out.println( "Name of the cat" + name);
 
 
     }
@@ -43,8 +52,8 @@ public class Cat extends Pet {
      * age is 0
      */
     public Cat() {
-        String name ="";
-        int age =0;
+        this.name= "Cat name";
+        this.age= 0;
 
     }
 

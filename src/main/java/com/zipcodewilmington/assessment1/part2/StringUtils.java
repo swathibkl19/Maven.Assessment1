@@ -60,34 +60,36 @@ public class StringUtils {
 
         String[] word = sentence.split(" ");
 
-        String reverse = new StringBuffer (word[0]) .reverse() .toString();
+        String reverse = new StringBuffer(word[0]).reverse().toString();
 
         //return (reverse);
 
-        String a =reverse.substring(0,1).toUpperCase() + reverse.substring(1);
+        String a = reverse.substring(0, 1).toUpperCase() + reverse.substring(1);
 
 
         return a;
     }
 
 
-
-
-
     /**
-     * @param str string input from client
+     * @param str   string input from client
      * @param index the index of the character to be removed from `str`
      * @return string with identical contents, excluding the character at the specified index
      * given a string and index, return an identical string excluding the character at the specified index
      */
     public static String removeCharacterAtIndex(String str, int index) {
 
-       // String newStr =  str.replace(charAt(index) , "");
 
-       //str.deleteCharAt(index,str);
+        StringBuilder str1 = new StringBuilder(str);
 
-        //return (str.(index,""));
-        return null;
+
+        str1.deleteCharAt(index);
+
+       // System.out.println(str1.toString());
+
+
+        return (str1.toString());
     }
-
 }
+
+

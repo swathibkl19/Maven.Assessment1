@@ -1,8 +1,9 @@
 package com.zipcodewilmington.assessment1.part2;
 import java.lang.*;
 import java.lang.Integer;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
-import  java.lang.String;
 
 /**
  * Created by leon on 2/16/18.
@@ -17,11 +18,12 @@ public class ArrayUtils {
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
         int count = 0;
 
+//for(Object x :objectArray)
+
         for (int i = 0; i < objectArray.length; i++) {
             if (objectArray[i].equals(objectToCount)) {
                 count++;
             }
-
         }
         return count;
     }
@@ -35,15 +37,42 @@ public class ArrayUtils {
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
 
-       /* int remove =(int) objectArray[0];
-        for (int i = 0; i < objectArray.length-1; i++) {
-         if (objectArray[i].equals(objectToRemove)) {
+        // Container
 
-       remove =removeValue(objectArray[i],objectToRemove) ;       //}
-        //array = ArrayUtils.removeElement(array, element)
-        //}*/
-        return null;
+        Integer[] container = new Integer[objectArray.length]; // {null,null,...,null}
+        Integer counter = 0;
+
+        for (int i = 0; i < objectArray.length; i++) {
+
+            if (objectArray[i] != objectToRemove) {
+                container[counter] = (Integer) objectArray[i];
+                counter++;
+            }
+            // System.out.println( i + " " +(Integer) objectArray[i] + " " + Arrays.asList(container) );
+        }
+
+        container = Arrays.copyOf(container, counter);
+
+        //System.out.println( Arrays.asList(container) );
+
+        return container;
+
+//        public static Integer[] removeValue(Integer[] objectArray, Integer objectToRemove) {
+
+        //int j = 0;
+        /* ArrayList<Integer>   newArray = new ArrayList<Integer>(objectArray.length);
+
+
+        for (int i = 0; i < objectArray.length; i++) {
+
+            if (objectArray[i] != objectToRemove) {
+               newArray.add(objectArray[i]);
+            }
+
+        }
+        return  newArray.toArray(new Integer[newArray.size()]);*/
     }
+
 
     /**
      * @param objectArray an array of any type of Object
@@ -53,6 +82,7 @@ public class ArrayUtils {
     public static Object getMostCommon(Object[] objectArray) {
 
         int count = 1, tempCount;
+
         int popular = (int) objectArray[0];
         //int temp = 0;
         for (int i = 0; i < (objectArray.length - 1); i++) {
@@ -67,10 +97,12 @@ public class ArrayUtils {
                     count = tempCount;
                 }
             }
-
         }
+
         return popular;
+
     }
+
 
     /**
      * @param objectArray an array of any type of Object
@@ -79,14 +111,14 @@ public class ArrayUtils {
      */
     public static Object getLeastCommon(Object[] objectArray) {
 
-        int count = 1 ,i;
-        int tempCount ,j;
+        int count = 1;
+        int tempCount, j;
         int nonpopular = (int) objectArray[0];
         //int temp = 0;
-        for ( i = 0; i < (objectArray.length - 1); i++) {
+        for (int i = 0; i < (objectArray.length - 1); i++) {
             int temp = (int) objectArray[i];
             tempCount = 0;
-            for ( j = 1; j < objectArray.length; j++) {
+            for (j = 1; j < objectArray.length; j++) {
                 if (temp <= (int) objectArray[j]) {
                     tempCount++;
                 }
@@ -98,28 +130,6 @@ public class ArrayUtils {
 
         }
         return nonpopular;
-        /*int minCount=4;
-
-        for(int i = 0; i < objectArray.length; i++)
-        {
-            int count = 0;
-
-           // for(int j = 0; j < objectArray.length; j++)
-            //{
-             //   if(objectArray[j] == objectArray[i])
-               // {
-                 //   count++;
-                //}
-            //}
-
-            if(count < minCount)
-            {
-                minCount = count;
-                //minValue = objectArray[i];
-            }
-        }*/
-       // return minCount;
-        //return  null;
     }
 
     /**
@@ -130,41 +140,34 @@ public class ArrayUtils {
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
 
-       /* int[] c = new int[objectArray.length+objectArrayToAdd.length];
+        Integer[] newArray = new Integer[(objectArray.length) + (objectArrayToAdd.length)];
         int count = 0;
+       // System.out.println(newArray.length);
 
-        for(int i = 0; i < objectArray.length; i++) {
-            c[i] = objectArray[i];
+
+        for (int i = 0; i < (Integer) objectArray.length; i++) {
+
+            newArray[count] = (Integer) objectArray[i];
             count++;
         }
-        for(int j = 0; j < objectArrayToAdd.length;j++) {
-            c[count++] = objectArrayToAdd[j];
+       // System.out.println(count);
+        for (int j = 0; j < (Integer) objectArrayToAdd.length; j++) {
+
+            newArray[count] = (Integer) objectArrayToAdd[j];
+            count++;
+
         }
-        for(int i = 0;i < c.length;i++) System.out.print(c[i]+" ");
-    }
-}*/
+     //   System.out.println(count);
 
+//        System.out.println((Integer) newArray[count] + "" + Arrays.asList(newArray));
 
-      /*  Object[] c = concatenate(objectArray,objectArrayToAdd);
+       // System.out.println( "This is the END!!! ");
 
-
-       // System.out.println("Merged object array : "
-               // + Arrays.toString(c));
-    }
-        return Arrays.toString(c);*/
-
-
-
-          /*  int aLen = objectArray.length;
-            int bLen = objectArrayToAdd.length;
-            int[] result = new int[aLen + bLen];
-
-            System.arraycopy(objectArray, 0, result, 0, aLen);
-            System.arraycopy(objectArrayToAdd, 0, result, aLen, bLen);
-
-            System.out.println(Arrays.toString(result));
-*/
-        return null;
+        return newArray;
     }
 }
+
+
+
+
 

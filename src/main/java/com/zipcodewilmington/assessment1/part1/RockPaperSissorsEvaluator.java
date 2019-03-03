@@ -46,7 +46,7 @@ else(handSign.equals("scissor")) {
         //case SCISSOR:
         //  return handSign == PAPER;
         //default:
-        return null;
+        return PAPER;
     }
 
     /**
@@ -54,7 +54,8 @@ else(handSign.equals("scissor")) {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+
+        return SCISSOR;
     }
 
     /**
@@ -63,7 +64,9 @@ else(handSign.equals("scissor")) {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
+
+        return handSignOfPlayer1 == ROCK ? ROCK :SCISSOR;
+
     }
 }
 

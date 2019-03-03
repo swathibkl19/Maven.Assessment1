@@ -43,6 +43,10 @@ public class IntegerUtils {
     public static Integer reverseDigits(Integer val) {
 
         int reverse = 0;
+        /**
+         * String number =val.String();
+         * String reversed =BasicUtilities
+         */
 
                  while(val !=  0)
                   {

@@ -1,5 +1,6 @@
 package com.zipcodewilmington.assessment1.part1;
 
+import com.zipcodewilmington.assessment1.part1.BasicArrayUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class BasicArrayUtilsTest {
         String expected = "The";
         
         // When
-        String actual = BasicArrayUtils.getFirstElement(inputArray); 
+        String actual = BasicArrayUtils.getFirstElement(inputArray);
         
         // Then
         Assert.assertEquals(expected, actual);
